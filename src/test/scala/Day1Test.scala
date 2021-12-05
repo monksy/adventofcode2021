@@ -1,14 +1,14 @@
-import TestUtils.convertStringToIntArray
+import TestUtils.convertStringToArray
 import org.scalatest._
 import org.scalatest.matchers.should.Matchers
-import wordspec._
+import org.scalatest.wordspec._
 
 import scala.io.Source
 
 class Day1Test extends AnyWordSpec with Matchers {
   "Day1Test- PartOne" should {
     "Handle the sample test" in {
-      val data = TestUtils.convertStringToIntArray("""199
+      val data = TestUtils.convertStringToArray("""199
 200
 208
 210
@@ -17,7 +17,7 @@ class Day1Test extends AnyWordSpec with Matchers {
 240
 269
 260
-263""")
+263""")(_.toInt)
 
       val expected = 7
       val actual = Day1.countIncreases(data)
@@ -36,7 +36,7 @@ class Day1Test extends AnyWordSpec with Matchers {
 
   "Day1Part2" should {
     "Handle the sample test" in {
-      val data = convertStringToIntArray("""199
+      val data = convertStringToArray("""199
 200
 208
 210
@@ -45,7 +45,7 @@ class Day1Test extends AnyWordSpec with Matchers {
 240
 269
 260
-263""")
+263""")(_.toInt)
 
       val expected = 5
       val actual = Day1.countIncreasesByThree(data)
